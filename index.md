@@ -221,7 +221,7 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
 | {event_nm}    | string    | event name. It’s event postback only (ex.login,				level_10) |
 
   
-### 2.2 install/event postback url
+### 2.2 install(conversion)/event postback url
 
 When install or conversion occurs, install postback url is called.
 
