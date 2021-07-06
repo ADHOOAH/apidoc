@@ -217,7 +217,6 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
 | {ph_mdl}      | string    | conversion device’s model name                                   |
 | {os_ver}      | string    | conversion device’s version (ex. 5.2)                            |
 | {ntn_cd}      | string    | conversion nations (ex.KR)                                       |
-| {payout}      | number    | conversion payout                                                |
 | {event_nm}    | string    | event name. It’s event postback only (ex.login,				level_10) |
 
   
