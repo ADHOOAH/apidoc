@@ -220,7 +220,7 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
 | {event_nm}    | string    | event name. It’s event postback only (ex.login,				level_10) |
 
   
-### 2.2 install/event postback url
+### 2.2 install(conversion)/event postback url
 
 When install or conversion occurs, install postback url is called.
 
@@ -241,7 +241,7 @@ You should send the following value to your campaign URL:
 ```
 https://api.adhooah.com/aff/api.click.main?campn_id=22479&pub_id=575360&click_id={click_id}&sub_id={sub_aff}&adid={GAID}&idfa={IOS_IDFA}
 ```
-* your install postback url
+* your install(conversion) postback url
 ```
 http://YOUR_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={adid_or_ifa}&ip={ipaddr}
 ```
