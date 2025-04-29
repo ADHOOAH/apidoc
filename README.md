@@ -101,6 +101,7 @@ https://www.adhooah.com/aff/api/v2/mycampaigns?pid=1ab17f073f4ffd28f8646a784e3a3
          "target_countries":"JP",
          "title":"Anyca iOS JP (Driver registration)",
          "url":"https:\/\/api.adhooah.com\/aff\/api.click.main?campn_id=28767&pub_id=8522&click_id=dummy_click_id_123&sub_id=1004",
+         "multi": false, 
          "daily_cap":5,
          "deduction":"Please check this sheet:\nhttps:\/\/docs.google.com\/spreadsheets\/d\/188SGAsieVle6UwFpGz2B5BvAVlCAseWJ5_zKlahYMDM\/edit?usp=sharing",
          "os_type":"iOS",
@@ -110,6 +111,7 @@ https://www.adhooah.com/aff/api/v2/mycampaigns?pid=1ab17f073f4ffd28f8646a784e3a3
          "target_market":"AppStore",
          "today_remaining":"5",
          "event_postback":"",
+         "multi_action":[],
          "status":"Live",
          "traffic":"Non-Incent"
       },
@@ -124,6 +126,7 @@ https://www.adhooah.com/aff/api/v2/mycampaigns?pid=1ab17f073f4ffd28f8646a784e3a3
          "target_countries":"KR",
          "title":"Araha(CPC)",
          "url":"https:\/\/api.adhooah.com\/aff\/api.click.main?campn_id=28904&pub_id=8522&click_id=dummy_click_id_123&sub_id=1004",
+         "multi": false,
          "daily_cap":100,
          "deduction":"test",
          "os_type":"Web",
@@ -133,6 +136,7 @@ https://www.adhooah.com/aff/api/v2/mycampaigns?pid=1ab17f073f4ffd28f8646a784e3a3
          "target_market":"Web",
          "today_remaining":"100",
          "event_postback":"",
+         "multi_action":[],
          "status":"Live",
          "traffic":"Non-Incent"
       },
@@ -158,17 +162,48 @@ https://www.adhooah.com/aff/api/v2/mycampaigns?pid=1ab17f073f4ffd28f8646a784e3a3
          "target_countries":"KR",
          "title":"Bithumb (Registration)",
          "url":"https:\/\/api.adhooah.com\/aff\/api.click.main?campn_id=29001&pub_id=8522&click_id=dummy_click_id_123&sub_id=1004",
+         "multi": true,
          "daily_cap":0,
-         "deduction":"** Fraud traffic\n-  Fraud traffic is discussed separately\n- Country : other than KR\n- Language : other than \"Ko-Kr\"\n- CTIT < 5 sec\n- Carrier : other than KT, LG U+, SKTelecom OR Unkown\n-  Overlap ADID\n-  Sign up after install time : less 60 sec\n-  Exclude if there is no ADID \/ IDFA.\n-  install-Registration time < 60s\n-  Deduction if the difference between the actual installation time and the actual installation time indicated in the tracker \"Customer User ID\" is more than 1 minute",
+         "deduction":"Fraud traffic",
          "os_type":"Android",
-         "pay_type":"CPA",
+         "pay_type":"MCPA",
          "currency":"KRW",
          "id":29001,
          "target_market":"GooglePlay",
          "today_remaining":"0",
          "event_postback":"",
          "status":"Live",
-         "traffic":"Non-Incent"
+          "multi_action": [
+                  {
+                    "action_id": "100126475",
+                    "payout": "2000.0",
+                    "action_nm": "sign up",
+                    "currency": "KRW",
+                    "event": "signup"
+                  },
+                  {
+                    "action_id": "200126475",
+                    "payout": "4000.0",
+                    "action_nm": "tutorial",
+                    "currency": "KRW",
+                    "event": "tutorial"
+                  },
+                  {
+                    "action_id": "300126475",
+                    "payout": "600.0",
+                    "action_nm": "stage 100",
+                    "currency": "KRW",
+                    "event": "stage100"
+                  },
+                  {
+                    "action_id": "400126475",
+                    "payout": "4500.0",
+                    "action_nm": "login",
+                    "currency": "KRW",
+                    "event": "login"
+                  }
+                ],
+         "traffic":"Incent"
       }
       
    ]
@@ -186,10 +221,10 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=<API_KEY>&campaign_id=<CA
   
 * {"return": result code}
 
-|Result Code | Descripition                      |
-|----------------|-------------------------------|
+|Result Code | Descripition  |
+|---|------------|
 |0| Success      |
-|2| Campaign id or campaign state is wrong.(not available)|
+|2| Campaign id or campaign state is wrong.(not available)  |
 |4| Wrong API KEY|
 |9| System Error|
 
@@ -209,7 +244,7 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
 | Column        | data type | Description                                                      |
 |---------------|-----------|------------------------------------------------------------------|
 | {app_id}      | number    | campaign id                                                      |
-| {sub_id}      | string    | sub publisher id (campaign url’s	&sub_id={sub_id})        |
+| {sub_id}      | string    | sub publisher id (campaign url’s	&sub_id={sub_id})               |
 | {click_id}    | string    | your click id (your transaction id)                              |
 | {ipaddr}      | string    | ip address of conversion devices                                 |
 | {attr_seq}    | number    | unique transaction id  (generated by tnk)                        |
@@ -219,7 +254,8 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
 | {ph_mdl}      | string    | conversion device’s model name                                   |
 | {os_ver}      | string    | conversion device’s version (ex. 5.2)                            |
 | {ntn_cd}      | string    | conversion nations (ex.KR)                                       |
-| {event_nm}    | string    | event name. It’s event postback only (ex.login,				level_10) |
+| {event_nm}    | string    | event name. It’s event postback only (ex.login,				level_10)     |
+| {multi_action} | number   | Is it multi action conversion (1: true, 0: false)                |
 
   
 ### 2.2 install(conversion)/event postback url
@@ -245,7 +281,7 @@ https://api.adhooah.com/aff/api.click.main?campn_id=22479&pub_id=575360&click_id
 ```
 * your install(conversion) postback url
 ```
-http://YOUR_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={adid_or_ifa}&ip={ipaddr}
+http://YOUR_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={adid_or_ifa}&ip={ipaddr}&multi={multi_action}
 ```
 * your event postback url (optional)
 ```
@@ -254,7 +290,7 @@ http://YOUR_EVENT_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={ad
   
   
 
-* If you need support, please email to performance@tnkfactory.com
+* If you need support, please email to  tech@tnkfactory.com
 
 
 
