@@ -43,25 +43,27 @@ https://www.adhooah.com/aff/api/v2/mycampaigns?pid=<API_KEY>
 
  | Column           | Description                                                 |
 |------------------|---------------------------------------------------------------
-| title            | campaign title                                                
-| id               | campaign ID                                                   
-| url              | campaign URL                                                  
-| pay_type         | CPI or CPA                                                    
-| payout           | payout                                                        
-| daily_cap        | daily cap                                                     
-| status           | campaign status (ex, Live, Stop, Available)                   
-| currency         | payout currency                                               
-| preview          | campaign preview                                              
-| traffic          | Incentive or Non-Incentive                                    
-| kpi              | campaign KPI                                                  
-| end_date         | campaign end date                                             
-| today_remaining  | number lef today                                              
-| deduction        | deduction condition                                           
-| os_type          | Andorid or IOS or mobile Web                                  
-| target_countries | targeted countries (ex, KR, US, …)                            
-| target_market    | targeted market (ex, GooglePlay, AppStore, Web)               
-| event_postback   | event postback name. (ex, login, level_3, purchae, … ) |
-| creatives        | [list] {dimen, url}          |
+| title            | campaign title                                               |                                               
+| id               | campaign ID                                                  |                                                
+| url              | campaign URL                                                 | 
+| pay_type         | CPI or CPA                                                   |
+| multi            | Is it multi action campaign (ex, true or false)              |
+| payout           | payout                                                       |
+| daily_cap        | daily cap                                                    |
+| status           | campaign status (ex, Live, Stop, Available)                  |
+| currency         | payout currency                                              |
+| preview          | campaign preview                                             |
+| traffic          | Incentive or Non-Incentive                                   |
+| kpi              | campaign KPI                                                 | 
+| end_date         | campaign end date                                            |  
+| today_remaining  | number lef today                                             |   
+| deduction        | deduction condition                                          |    
+| os_type          | Andorid or IOS or mobile Web                                 |     
+| target_countries | targeted countries (ex, KR, US, …)                           |      
+| target_market    | targeted market (ex, GooglePlay, AppStore, Web)              |       
+| event_postback   | event postback name. (ex, login, level_3, purchae, … )       |
+| creatives        | [list] {dimen, url}                                          |
+| multi_action     | [list] {action_id, payout, action_nm, currency, event}       |
 
 
 * example
