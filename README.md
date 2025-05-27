@@ -279,9 +279,13 @@ You should send the following value to your campaign URL:
 ```
 https://api.adhooah.com/aff/api.click.main?campn_id=22479&pub_id=575360&click_id={click_id}&sub_id={sub_aff}&adid={GAID}&idfa={IOS_IDFA}
 ```
-* your install(conversion) postback url
+* your conversion postback url
 ```
-http://YOUR_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={adid_or_ifa}&ip={ipaddr}&multi={multi_action}
+http://YOUR_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={adid_or_ifa}&ip={ipaddr}
+```
+* your conversion(multi action) postback url
+```
+http://YOUR_POSTBACK_URL?click_id={click_id}&sub_id={sub_id}&device_id={adid_or_ifa}&ip={ipaddr}&multi={multi_action}&event={event_nm}
 ```
 * your event postback url (optional)
 ```
