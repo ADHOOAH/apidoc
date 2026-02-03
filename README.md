@@ -258,7 +258,7 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
 | {multi_action} | number   | Is it multi action conversion (1: true, 0: false)                |
 
   
-### 2.2 install(conversion)/event postback url
+### 2.2 conversion/event postback url
 
 When install or conversion occurs, install postback url is called.
 
