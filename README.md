@@ -260,7 +260,7 @@ https://www.adhooah.com/aff/api/v2/approvalrequest?pid=7c9704d674ec0156782e123e9
   
 ### 2.2 conversion/event postback url
 
-When install or conversion occurs, install postback url is called.
+When conversion occurs, conversion postback url is called.
 
 If the campaign supports in-app events, the event postback url is called.
 
